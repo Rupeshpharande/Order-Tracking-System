@@ -1,38 +1,76 @@
-Order-Tracking-System
-Project Overview :-
-The Order Tracking System is a Java-based application that leverages JDBC for database connectivity and MySQL for data management. The system is designed to handle different user roles—Admin, Supplier, and Customer—each with specific functionalities. It provides a comprehensive solution for managing orders, products, and user interactions, with features that include real-time order tracking, product management, and role-based access control.
+# Order Tracking System
 
-Features :-
-Admin : Full access to manage customers, suppliers, products, and orders.
+## Project Overview  
+The **Order Tracking System** is a Java-based application that leverages JDBC for database connectivity and MySQL for data management. This system efficiently handles different user roles—**Admin, Supplier, and Customer**—each with specific functionalities. It provides a comprehensive solution for managing orders, products, and user interactions, including **real-time order tracking, product management, and role-based access control**.
 
-Supplier : Capable of adding and deleting products, changing order statuses, and viewing total orders.
+## Features  
 
-Customer : Can purchase products, check order details, and view previous orders.
+### Admin  
+- Full access to manage **customers, suppliers, products, and orders**.  
 
-Database :-
-Database Management System : MySQL
+### Supplier  
+- Add and delete products.  
+- Change order statuses.  
+- View total orders.  
 
-Triggers Implemented : Order Count Update : Automatically increments the total order count when a customer buys a product and decrements it upon product deletion.
+### Customer  
+- Purchase products.  
+- Check order details.  
+- View previous orders.  
 
-Technologies :-
-Programming Language : Java
+## Database  
 
-Database Connectivity : JDBC (Java Database Connectivity)
+### Database Management System  
+- **MySQL**  
 
-Database : MySQL
+### Triggers Implemented  
+- **Order Count Update**:  
+  - Automatically increments the total order count when a customer buys a product.  
+  - Decrements the total order count when a product is deleted.  
 
-Usage :-
-Admin : Log in with admin credentials to manage all aspects of the system.
+## Technologies  
 
-Supplier : Log in to add or remove products, manage order statuses, and view total orders.
+- **Programming Language**: Java  
+- **Database Connectivity**: JDBC (Java Database Connectivity)  
+- **Database**: MySQL  
 
-Customer : Log in to purchase products, view current and past order details.
+## Usage  
 
-Database Schema :-
-Customer :- Store customer information like name,phone no,address,total order.
+- **Admin**: Log in with admin credentials to manage all aspects of the system.  
+- **Supplier**: Log in to add or remove products, manage order statuses, and view total orders.  
+- **Customer**: Log in to purchase products, view current and past order details.  
 
-Orderdetails :- Store all order details like order id, customer id,product id, delivery date, order status.
+## Database Schema  
 
-Product :- Store product details like name, price,supplier id.
+### Customer  
+Stores customer information:  
+- **id** (Primary Key)  
+- **name**  
+- **phone_number**  
+- **address**  
+- **total_orders**  
 
-Suplier :- Stores supplier details.
+### OrderDetails  
+Stores order details:  
+- **order_id** (Primary Key)  
+- **customer_id** (Foreign Key referencing Customer)  
+- **product_id** (Foreign Key referencing Product)  
+- **delivery_date**  
+- **order_status**  
+
+### Product  
+Stores product details:  
+- **product_id** (Primary Key)  
+- **name**  
+- **price**  
+- **supplier_id** (Foreign Key referencing Supplier)  
+
+### Supplier  
+Stores supplier details:  
+- **supplier_id** (Primary Key)  
+- **name**  
+- **contact_info**  
+
+---
+
+This system ensures efficient **order management, product tracking, and user role-based functionalities**, making it a **reliable and scalable solution** for order tracking needs.
